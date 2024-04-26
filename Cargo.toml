@@ -5,13 +5,17 @@ edition = "2021"
 
 [dependencies]
 tonic = "0.11"
+# needed for tonic
 tokio = { version = "1", features = ["full"] }
+# allows for clients to not have the protobuf definitions
 tonic-reflection = "0.11"
-prost = "0.12.3"
+# deseralizes and serializes protobuf messages
+prost = "0.12"
 tonic-web = "0.11"
 tower-http = "0.4"
 
 [build-dependencies]
+# for compiling the protobuf files
 tonic-build = "0.11"
 
 [[bin]]

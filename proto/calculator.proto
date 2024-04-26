@@ -7,17 +7,22 @@ service Calculator {
   rpc Divide(CalculationRequest) returns (CalculationResponse);
 }
 
+// this is the data type that we send
 message CalculationRequest {
-  int64 a = 1;
-  int64 b = 2;
+  int64 x = 1;
+  int64 y = 2;
 }
 
+// this is the data type that we send back
 message CalculationResponse { int64 result = 1; }
 
 service Admin {
   rpc GetRequestCount(GetCountRequest) returns (CounterResponse);
 }
 
+// emtpy data types can work as requests
 message GetCountRequest {}
 
-message CounterResponse { uint64 count = 1; }
+message CounterResponse { 
+  uint64 count = 1;
+}
